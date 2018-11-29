@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+declare(strict_types=1);
 
-use Illuminate\Http\Request;
+namespace App\Http\Controllers;
 
 class ListArticlesController extends Controller
 {
-
     public function __invoke()
     {
         return response()->json([]);

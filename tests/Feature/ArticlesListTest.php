@@ -1,10 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ArticlesListTest extends TestCase
 {
@@ -12,7 +12,6 @@ class ArticlesListTest extends TestCase
      * A basic test example.
      *
      * @test
-     * @return void
      */
     public function shouldListArticles()
     {
