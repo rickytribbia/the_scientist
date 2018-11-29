@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace LaravelDay\Article;
 
+use LaravelDay\Article\ValueObject\ArticleId;
+use LaravelDay\Article\ValueObject\Body;
 use LaravelDay\Article\ValueObject\Title;
 
 final class Article
@@ -17,11 +19,11 @@ final class Article
     // final -> per impedire che qualcun altro estenda la nostra classe senza "permesso"
 
     /**
-     * @var string
+     * @var Title
      */
     private $title;
     /**
-     * @var string
+     * @var Body
      */
     private $body;
     /**
@@ -30,7 +32,7 @@ final class Article
     private $creationDate;
 
     /**
-     * @var int
+     * @var ArticleId
      */
     private $id;
 
@@ -40,7 +42,7 @@ final class Article
     // E' provato a benchmark (fatto da quelli di MariaDB, fors'anche) che l'id UUID salvato come binario in un database è
     // molto più performante di un semplice id integer autoincrementale
 
-    public function __construct(int $id, Title $title, string $body, \DateTimeImmutable $creationDate)
+    public function __construct(ArticleId $id, Title $title, Body $body, \DateTimeImmutable $creationDate)
     {
         $this->id = $id;
         $this->title = $title;
@@ -56,7 +58,7 @@ final class Article
     /**
      * @return string
      */
-    public function getBody(): string
+    public function getBody(): Body
     {
         return $this->body;
     }
@@ -72,7 +74,7 @@ final class Article
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId(): ArticleId
     {
         return $this->id;
     }

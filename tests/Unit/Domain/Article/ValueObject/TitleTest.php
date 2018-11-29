@@ -28,10 +28,10 @@ class TitleTest extends TestCase
      *
      * @throws TitleTooShort
      */
-    public function shouldThrowTitleTooLongError()
+    public function shouldThrowTitleTooShortError()
     {
         $this->expectException(TitleTooShort::class);
         $titleStr = $this->faker->words(1, true);
-        $title = new Title($titleStr);
+        new Title($titleStr);
     }
 }
