@@ -1,13 +1,14 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: riccardotribbia
  * Date: 29/11/2018
- * Time: 15:17
+ * Time: 15:17.
  */
 
 namespace LaravelDay\Article;
-
 
 use LaravelDay\Article\ValueObject\Title;
 
@@ -39,7 +40,7 @@ final class Article
     // E' provato a benchmark (fatto da quelli di MariaDB, fors'anche) che l'id UUID salvato come binario in un database è
     // molto più performante di un semplice id integer autoincrementale
 
-    public function __construct(int $id, Title $title, string $body, \DateTime $creationDate)
+    public function __construct(int $id, Title $title, string $body, \DateTimeImmutable $creationDate)
     {
         $this->id = $id;
         $this->title = $title;
@@ -63,7 +64,7 @@ final class Article
     /**
      * @return \DateTime
      */
-    public function getCreationDate(): \DateTime
+    public function getCreationDate(): \DateTimeImmutable
     {
         return $this->creationDate;
     }

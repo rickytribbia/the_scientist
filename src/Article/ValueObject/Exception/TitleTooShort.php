@@ -1,13 +1,14 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: riccardotribbia
  * Date: 29/11/2018
- * Time: 16:13
+ * Time: 16:13.
  */
 
 namespace LaravelDay\Article\ValueObject\Exception;
-
 
 class TitleTooShort extends \Exception
 {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Unit\Domain\Article\UseCase\ListArticles;
 
 use LaravelDay\Article\UseCase\ListArticle\ListArticles;
@@ -17,13 +19,12 @@ class ListArticlesTest extends TestCase
             [
                 'title' => 'Articolo 1',
                 'body' => 'Questo è un articolo',
-                'creationDate' => '2018-11-29 00:00:00'
-            ]
+                'creationDate' => '2018-11-29 00:00:00',
+            ],
         ];
 
         $data = $handler();
 
         $this->assertEquals($expectedData, $data);
-
     }
 }

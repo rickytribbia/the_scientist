@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Unit\Domain\Article\ValueObject;
 
+use Illuminate\Foundation\Testing\WithFaker;
 use LaravelDay\Article\ValueObject\Exception\TitleTooShort;
 use LaravelDay\Article\ValueObject\Title;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TitleTest extends TestCase
 {
@@ -19,12 +20,12 @@ class TitleTest extends TestCase
     {
         $titleStr = $this->faker->words(10, true);
         $title = new Title($titleStr);
-        $this->assertSame($titleStr, (string)$title);
+        $this->assertSame($titleStr, (string) $title);
     }
 
     /**
-     *
      * @test
+     *
      * @throws TitleTooShort
      */
     public function shouldThrowTitleTooLongError()

@@ -12,6 +12,7 @@ class ListArticlesController extends Controller
     {
         // return Article::find(...); <- non lo faccio, altrimenti per fare i test avrei bisogno del DB fin da subito.
         $listArticles = new ListArticles();
+
         return response()->json($listArticles());
     }
 }
